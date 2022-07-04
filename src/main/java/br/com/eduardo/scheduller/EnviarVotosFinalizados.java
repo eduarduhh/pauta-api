@@ -30,7 +30,7 @@ public class EnviarVotosFinalizados {
 	public void executar() {
 
 		LocalDateTime inicio = LocalDateTime.now();
-		LocalDateTime fim = LocalDateTime.now().minus(1, null);
+		LocalDateTime fim = LocalDateTime.now().minusDays(1L);
 
 		List<Sessao> findAllByFimBetween = sessaoService.findAllByFimBetween(inicio, fim);
 
