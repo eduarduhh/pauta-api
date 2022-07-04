@@ -1,5 +1,6 @@
 package br.com.eduardo.service.impl;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -83,6 +84,11 @@ public class SessaoService implements IGenericService<Sessao> {
 	@Override
 	public long count() {
 		return sessaoRepository.count();
+	}
+	
+	
+	public List<Sessao> findAllByFimBetween(LocalDateTime inicio, LocalDateTime fim) {
+		return sessaoRepository.findAllByFimBetween(inicio, fim);
 	}
 
 
